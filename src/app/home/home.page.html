@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista Música
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista Música</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-label>Canción</ion-label>
+  <ion-input [(ngModel)]="cancionEditando.cancion"></ion-input>
+
+  <ion-label>Autor</ion-label>
+  <ion-input [(ngModel)]="cancionEditando.autor"></ion-input>
+
+  <ion-button (click)="clicBotonInsertar()">Añadir canción</ion-button>
+  <ion-button (click)="clicBotonBorrar()">Borrar canción</ion-button>
+  <ion-button (click)="clicBotonModificar()">Modificar canción</ion-button>
+
+  <h1>LISTA DE CANCIONES</h1>
+  <ion-list>
+    <ion-item *ngFor="let documentCancion of arrayColeccionCanciones" (click)="selecCancion(documentCancion.id, documentCancion.cancion)">
+      <ion-grid>
+        <ion-row>
+          <h2>{{documentCancion.cancion.cancion}}</h2>
+        </ion-row>
+        <ion-row>
+          <p>{{documentCancion.cancion.autor}}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>

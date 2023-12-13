@@ -1,0 +1,7 @@
+{
+  "name": "canciones-firestore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
